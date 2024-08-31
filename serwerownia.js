@@ -3,7 +3,8 @@ var mysql = require('mysql');
 var jwt = require('jsonwebtoken');
 const { Client } = require('pg');
 
-var server = new WebSocket.Server({ port: 3000 });
+const port = process.env.PORT || 3000; // Używa portu z zmiennej środowiskowej lub domyślnie 3000
+const server = new WebSocket.Server({ port: port });
 
 let users = []; //tablica, w której mamy info o podłączonych do strony userach
 
@@ -550,4 +551,4 @@ server.on('connection', (ws) => {
     });
 });
 
-console.log('WebSocket server is running on ws://localhost:3000');
+console.log('WebSocket server is running on wss/tallalalalala');
