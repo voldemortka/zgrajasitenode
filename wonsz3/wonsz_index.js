@@ -2,7 +2,7 @@ var name_wb, nr_wb, id_wb, wpisany=true, hex_wb, index=true;
 var sent_socekt=false; var sent_normal=false;
 var kolory = [];
 
-const socket = new WebSocket('ws://localhost:3000');
+const socket = new WebSocket('wss://zgrajasitenode.onrender.com');
 
 //połączenie z serwerem
     socket.addEventListener('open', (event) => {
