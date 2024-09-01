@@ -2,11 +2,49 @@ var WebSocket = require('ws');
 const http = require('http');
 var mysql = require('mysql');
 var jwt = require('jsonwebtoken');
+const fs = require('fs');
+const path = require('path');
 const { Client } = require('pg');
 
-const serH = http.createServer((req, res) => {
+/*const serH = http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Działam....');
+});*/
+
+const serH = http.createServer((req, res) => {
+  // Rozdzielamy URL na części
+  const urlParts = req.url.split('/').filter(part => part);
+  const gameFolder = urlParts[0] || 'default'; // Domyślny katalog, jeśli nie podano
+  const filePath = path.join(__dirname, gameFolder, urlParts.slice(1).join('/') || 'index.html');
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404, {'Content-Type': 'text/plain'});
+      res.end('Not Found');
+    } else {
+      const extname = path.extname(filePath);
+      let contentType = 'text/html';
+      switch (extname) {
+        case '.js':
+          contentType = 'text/javascript';
+          break;
+        case '.css':
+          contentType = 'text/css';
+          break;
+        case '.png':
+          contentType = 'image/png';
+          break;
+        case '.jpg':
+          contentType = 'image/jpeg';
+          break;
+        case '.gif':
+          contentType = 'image/gif';
+          break;
+      }
+      res.writeHead(200, {'Content-Type': contentType});
+      res.end(data);
+    }
+  });
 });
 
 
