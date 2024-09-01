@@ -569,8 +569,8 @@ server.on('connection', (ws) => {
     });
 });
 
-serH.listen(port, () => {
+/*serH.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
-});
+});*/
 
 console.log('WebSocket server is running on wss/tallalalalala');
