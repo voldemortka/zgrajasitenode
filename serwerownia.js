@@ -1,10 +1,16 @@
 var WebSocket = require('ws');
+const http = require('http');
 var mysql = require('mysql');
 var jwt = require('jsonwebtoken');
 const { Client } = require('pg');
 
+const serH = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Działam....');
+});
+
 const port = process.env.PORT || 3000; // Używa portu z zmiennej środowiskowej lub domyślnie 3000
-const server = new WebSocket.Server({ port: port });
+const server = new WebSocket.Server({ serwer: serH });
 
 let users = []; //tablica, w której mamy info o podłączonych do strony userach
 
@@ -549,6 +555,10 @@ server.on('connection', (ws) => {
     ws.on('close', () => {
         console.log('Client disconnected serwer');
     });
+});
+
+serH.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
 
 console.log('WebSocket server is running on wss/tallalalalala');
