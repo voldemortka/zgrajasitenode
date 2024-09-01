@@ -4,24 +4,11 @@ var mysql = require('mysql');
 var jwt = require('jsonwebtoken');
 const { Client } = require('pg');
 
-/*const serH = http.createServer((req, res) => {
+const serH = http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Działam....');
-});*/
-const serH = http.createServer((req, res) => {
-  // Ustalamy ścieżkę do pliku na podstawie żądania
-  let filePath = path.join(__dirname, 'wonsz3', 'index.html');
-
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(500, {'Content-Type': 'text/plain'});
-      res.end('Internal Server Error');
-    } else {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.end(data);
-    }
-  });
 });
+
 
 
 
