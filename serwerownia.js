@@ -9,8 +9,20 @@ const serH = http.createServer((req, res) => {
   res.end('Działam....');
 });
 
+
+
+
+//const wss = new WebSocket.Server({ server });
+
+
+
 const port = process.env.PORT || 3000; // Używa portu z zmiennej środowiskowej lub domyślnie 3000
-const server = new WebSocket.Server({ serwer: serH });
+const serx = serH.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
+const server = new WebSocket.Server({ server: serx });
+
+//const server = new WebSocket.Server({ serwer: serH });
 
 let users = []; //tablica, w której mamy info o podłączonych do strony userach
 
