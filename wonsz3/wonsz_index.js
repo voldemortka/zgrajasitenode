@@ -90,20 +90,20 @@ const socket = new WebSocket('wss://zgrajasitenode.onrender.com');
                 case 'game_has_been_finished':
                     let punkty = $('#licznik').html();
                     socket.send(JSON.stringify({type: 'pobierz_pkt', pkt: punkty, id: id_wb}));
-                    window.location.href = 'http://localhost/mine/Zgraja%20site/trans_return_snake.php';                
+                    window.location.href = 'http://zgrajasite.kesug.com/trans_return_snake.php';                
                     break;
 
                 case 'everyone_is_dead':
                     let punktyx = $('#licznik').html();
                     socket.send(JSON.stringify({type: 'pobierz_pkt', pkt: punktyx, id: id_wb}));
-                    window.location.href = 'http://localhost/mine/Zgraja%20site/trans_return_snake.php';                
+                    window.location.href = 'http://zgrajasite.kesug.com/trans_return_snake.php';                
                     break;
 
                 case 'everyone_out':
                     $('#end_definitely').html('');
                     $('#end_definitely').css('border', '');
                     $('#end_definitely').attr('class', 'end_def2');
-                    window.location.href = '../zgraja.php'; 
+                    window.location.href = 'http://zgrajasite.kesug.com/zgraja.php'; 
                     break;
 
                 // dane startowe ---
@@ -240,7 +240,7 @@ function start_game(){
 
 function leave_lobby(){
     socket.send(JSON.stringify({type: 'someone_left_lobby', id: id_wb, nr: nr_wb}));
-    window.location.href = 'http://localhost/mine/Zgraja%20site/transform.php';
+    window.location.href = 'http://zgrajasite.kesug.com/transform.php';
 }
 
 function loaded(){
@@ -405,10 +405,10 @@ function game_finished(){
     let punkty = $('#licznik').html();
     socket.send(JSON.stringify({type: 'pobierz_pkt', pkt: punkty, id: id_wb}));
     socket.send(JSON.stringify({type: 'game_has_been_finished'}));
-    window.location.href = 'http://localhost/mine/Zgraja%20site/trans_return_snake.php';
+    window.location.href = 'http://zgrajasite.kesug.com/trans_return_snake.php';
 }
 
 function end_defin(){
     socket.send(JSON.stringify({type: 'wykasuj_wszystkich'}));
-    window.location.href = '../zgraja.php';
+    window.location.href = 'http://zgrajasite.kesug.com/zgraja.php';
 }
