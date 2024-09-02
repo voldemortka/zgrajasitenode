@@ -2,7 +2,7 @@ var id_wb; var name_wb; var il_wb; var wpisany=1; var connected=0; var nr_wb; va
 var in_pacman=0;
 var index=false;
 
-const socket = new WebSocket('ws://localhost:3000');
+const socket = new WebSocket('wss://zgrajasitenode.onrender.com');
 
 //połączenie z serwerem
     socket.addEventListener('open', (event) => {
@@ -131,7 +131,7 @@ const socket = new WebSocket('ws://localhost:3000');
                     console.log("Gra zakończona");
                     $('#plansza').html("KONIEC GRY!</br></br>Wygrana: "+dane.kto);
                     $('#plansza').attr('class', 'koniec_gry_info');
-                    $('#panel').append("<div id='back_from_pacy'><a href='http://localhost/mine/Zgraja%20site/transform.php'>Wróć do gier</a></div>")
+                    $('#panel').append("<div id='back_from_pacy'><a href='http://zgrajasite.kesug.com/transform.php'>Wróć do gier</a></div>")
                     break;
 
                 default:
@@ -484,11 +484,11 @@ function index_load(){index_load=true;}
 
 function leave_game(){
     socket.send(JSON.stringify({type: 'someone_left_game', kto: id_wb}));
-    window.location.href = 'http://localhost/mine/Zgraja%20site/transform.php';
+    window.location.href = 'http://zgrajasite.kesug.com/transform.php';
 }
 
 function end_game(){
     socket.send(JSON.stringify({type: 'game_has_finished', kto: id_wb}));
-    window.location.href = 'http://localhost/mine/Zgraja%20site/transform.php';
+    window.location.href = 'http://zgrajasite.kesug.com/transform.php';
 }
 
