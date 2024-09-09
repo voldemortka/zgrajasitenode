@@ -161,7 +161,7 @@ server.on('connection', (ws) => {
                         console.log("ok, we've got token");
                         if(tokenW) {
                             // Dekodowanie tokenu JWT
-                            var decoded = jwt.verify(tokenW, 'zgrajasite_snake1');
+                            var decoded = jwt.verify(tokenW, "zgrajasite_snake1");
                             console.log("x");
                             var { name, id, hex, nr, kolory, barwy, spis } = decoded.data;
                             console.log('Token received');
@@ -177,7 +177,7 @@ server.on('connection', (ws) => {
                             var token2W = dane.token;
                             if(token2W) {
                                 // Dekodowanie tokenu JWT
-                                var decoded = jwt.verify(token2W, 'zgrajasite_snake2');
+                                var decoded = jwt.verify(token2W, "zgrajasite_snake2");
                                 var { name, id, hex, nr } = decoded.data;
                                 console.log('Token received');
                 
