@@ -124,11 +124,20 @@ server.on('connection', (ws) => {
 
             //MESSENGER
             case 'take_token_mess':
-                ws.send(JSON.stringify({ type: 'request_token' })); 
-                break;
+                //ws.send(JSON.stringify({ type: 'request_token' })); 
+                //break;
 
-                case 'send_token_mess':
-                    var tokenW = dane.token;
+                //case 'send_token_mess':
+                    //var tokenW = dane.token;
+                const cookie = req.headers.cookie; //nagłówki tutaj sobie bierze
+                const cookieMap = cookies.split(';').reduce((acc, cookie) => {
+                  const [name, value] = cookie.trim().split('=');  //rozdzielamy ciacheczka
+                  acc[name] = value;
+                  return acc;
+                }, {});
+
+                const tokenW = cookieMap['snake1_token'];
+                
                     console.log("ok, we've got token");
                     if(tokenW) {
                         // Dekodowanie tokenu JWT
@@ -152,26 +161,44 @@ server.on('connection', (ws) => {
 
 
                 //wonsz 3.0
-                case 'take_token_wonsz':
-                    ws.send(JSON.stringify({ type: 'request_token' })); 
-                    break;
+                case 'send_token1_wonsz':
+    const cookie = req.headers.cookie;  // Nagłówki tutaj sobie bierze
     
-                    case 'send_token1_wonsz':
-                        var tokenW = dane.token;
-                        console.log("ok, we've got token");
-                        if(tokenW) {
-                            // Dekodowanie tokenu JWT
-                            var decoded = jwt.verify(tokenW, "zgrajasite_snake1");
-                            console.log("x");
-                            var { name, id, hex, nr, kolory, barwy, spis } = decoded.data;
-                            console.log('Token received');
+    if (cookie) {
+        // Rozdzielamy ciacheczka
+        const cookieMap = cookie.split(';').reduce((acc, cookie) => {
+            const [name, value] = cookie.trim().split('=');  
+            acc[name] = value;
+            return acc;
+        }, {});
+
+        const tokenW = cookieMap['snake1_token'];
+
+        console.log("ok, we've got token");
+        if (tokenW) {
+            try {
+                // Dekodowanie tokenu JWT
+                const decoded = jwt.verify(tokenW, "zgrajasite_snake1");
+                console.log("x");
+                const { name, id, hex, nr, kolory, barwy, spis } = decoded.data;
+                console.log('Token received');
+
+                // Potwierdzenie odebrania tokenu
+                ws.send(JSON.stringify({ type: 'token_received', name, id, hex, nr, kolory, barwy, spis }));
+            } catch (error) {
+                console.log("Token verification failed", error);
+                
+            }
+        } else {
+            console.log("Token is broken");
+           
+        }
+    } else {
+        console.log("No cookies found");
         
-                            // Potwierdzenie odebrania tokenu
-                            console.log(0);
-                            ws.send(JSON.stringify({ type: 'token_received', name, id, hex, nr, kolory, barwy, spis }));
-                            console.log(1);
-                        } else console.log("Token is broken");
-                        break;
+    }
+    break;
+
     
                         case 'send_token2_wonsz':
                             var token2W = dane.token;
