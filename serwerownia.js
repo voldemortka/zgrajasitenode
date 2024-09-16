@@ -161,6 +161,10 @@ server.on('connection', (ws) => {
 
 
                 //wonsz 3.0
+              case 'take_token_wonsz':
+                ws.send(JSON.stringify({ type: 'request_token' })); 
+                break;
+                
                 case 'send_token1_wonsz':
     const cookie = req.headers.cookie;  // Nagłówki tutaj sobie bierze
     
