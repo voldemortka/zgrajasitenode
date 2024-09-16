@@ -129,7 +129,7 @@ server.on('connection', (ws) => {
 
                 //case 'send_token_mess':
                     //var tokenW = dane.token;
-                const cookie = req.headers.cookie; //nagłówki tutaj sobie bierze
+              /*  const cookie = req.headers.cookie; //nagłówki tutaj sobie bierze
                 const cookieMap = cookies.split(';').reduce((acc, cookie) => {
                   const [name, value] = cookie.trim().split('=');  //rozdzielamy ciacheczka
                   acc[name] = value;
@@ -155,7 +155,7 @@ server.on('connection', (ws) => {
                             ws.send(JSON.stringify({ type: 'token_received', name, id, name2, id2, tab }));
                         });
                         // Potwierdzenie odebrania tokenu
-                    } else console.log("Token is broken");
+                    } else console.log("Token is broken"); */
                     break;
 
 
