@@ -110,9 +110,9 @@ const socket = new WebSocket('wss://zgrajasitenode.onrender.com');
                     case 'request_token':
                         console.log("xxx");
                         // Odczyt tokenu z localStorage
-                        var token;
-                        if(index) {token = localStorage.getItem('snake1_token'); socket.send(JSON.stringify({ type: 'send_token1_wonsz', token }));}
-                        else {token = localStorage.getItem('snake2_token'); socket.send(JSON.stringify({ type: 'send_token2_wonsz', token }));}
+                      //  var token;
+                        if(index) {/*token = localStorage.getItem('snake1_token');*/ socket.send(JSON.stringify({ type: 'send_token1_wonsz' }));}
+                        else {/*token = localStorage.getItem('snake2_token');*/ socket.send(JSON.stringify({ type: 'send_token2_wonsz' }));}
                         // Wysłanie tokenu do serwera Node.js
                         
                         break;
