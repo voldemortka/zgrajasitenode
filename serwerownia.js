@@ -101,7 +101,7 @@ function send_to_everyone(ws, mess){
     });
 }
 
-server.on('connection', (ws) => {
+server.on('connection', (ws, req) => {
     console.log('Client connected serwer');
     //weszło -> nowa osoba się zalogowała
     users.push(ws); //ws posiada info o danym userze, kto to i co to: WS TO TO KONTO, Z TEGO KONKRETNEGO KOMPUTERA cały czas
@@ -167,9 +167,11 @@ server.on('connection', (ws) => {
                 
                 case 'send_token1_wonsz':
     const cookie = req.headers.cookie;  // Nagłówki tutaj sobie bierze
+                console.log(1);
     
     if (cookie) {
         // Rozdzielamy ciacheczka
+      console.log(2);
         const cookieMap = cookie.split(';').reduce((acc, cookie) => {
             const [name, value] = cookie.trim().split('=');  
             acc[name] = value;
