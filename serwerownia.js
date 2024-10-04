@@ -6,64 +6,64 @@ const fs = require('fs');
 const path = require('path');
 const { Client } = require('pg');
 
-/*const serH = http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Działam....');
-});*/
+// Funkcja do parsowania ciasteczek
+function parseCookies(request) {
+    const cookieHeader = request.headers.cookie || '';
+    const cookies = {};
 
+    cookieHeader.split(';').forEach(cookie => {
+        const [name, ...value] = cookie.split('=');
+        cookies[name.trim()] = decodeURIComponent(value.join('='));
+    });
+
+    return cookies;
+}
+
+// Tworzenie serwera HTTP do obsługi plików
 const serH = http.createServer((req, res) => {
-  // Rozdzielamy URL na części
-  const urlParts = req.url.split('/').filter(part => part);
-  const gameFolder = urlParts[0] || 'default'; // Domyślny katalog, jeśli nie podano
-  const filePath = path.join(__dirname, gameFolder, urlParts.slice(1).join('/') || 'index.html');
+    const urlParts = req.url.split('/').filter(part => part);
+    const gameFolder = urlParts[0] || 'default'; // Domyślny katalog, jeśli nie podano
+    const filePath = path.join(__dirname, gameFolder, urlParts.slice(1).join('/') || 'index.html');
 
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(404, {'Content-Type': 'text/plain'});
-      res.end('Not Found');
-    } else {
-      const extname = path.extname(filePath);
-      let contentType = 'text/html';
-      switch (extname) {
-        case '.js':
-          contentType = 'text/javascript';
-          break;
-        case '.css':
-          contentType = 'text/css';
-          break;
-        case '.png':
-          contentType = 'image/png';
-          break;
-        case '.jpg':
-          contentType = 'image/jpeg';
-          break;
-        case '.gif':
-          contentType = 'image/gif';
-          break;
-      }
-      res.writeHead(200, {'Content-Type': contentType});
-      res.end(data);
-    }
-  });
+    fs.readFile(filePath, (err, data) => {
+        if (err) {
+            res.writeHead(404, { 'Content-Type': 'text/plain' });
+            res.end('Not Found');
+        } else {
+            const extname = path.extname(filePath);
+            let contentType = 'text/html';
+            switch (extname) {
+                case '.js':
+                    contentType = 'text/javascript';
+                    break;
+                case '.css':
+                    contentType = 'text/css';
+                    break;
+                case '.png':
+                    contentType = 'image/png';
+                    break;
+                case '.jpg':
+                    contentType = 'image/jpeg';
+                    break;
+                case '.gif':
+                    contentType = 'image/gif';
+                    break;
+            }
+            res.writeHead(200, { 'Content-Type': contentType });
+            res.end(data);
+        }
+    });
 });
 
-
-
-
-
-//const wss = new WebSocket.Server({ server });
-
-
-
-const port = process.env.PORT || 3000; // Używa portu z zmiennej środowiskowej lub domyślnie 3000
+const port = process.env.PORT || 3000;
 const serx = serH.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+    console.log(`Server is listening on port ${port}`);
 });
+
+// Tworzenie serwera WebSocket
 const server = new WebSocket.Server({ server: serx });
 
-//const server = new WebSocket.Server({ serwer: serH });
-
-let users = []; //tablica, w której mamy info o podłączonych do strony userach
+let users = []; // Tablica z użytkownikami
 
 const client = new Client({
     host: "aws-0-eu-central-1.pooler.supabase.com",
@@ -71,21 +71,8 @@ const client = new Client({
     password: "SlytherV35!",
     database: "postgres",
     port: 6543,
-});/*
-var db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'zgraja'
 });
 
-db.connect((err) => {
-    if (err) {
-        console.log('Error connecting to MySQL:', err);
-    } else {
-        console.log('Connected to MySQL');
-    }
-}); */
 client.connect((err) => {
     if (err) {
         console.error('Error connecting to PostgreSQL:', err.stack);
@@ -94,28 +81,42 @@ client.connect((err) => {
     }
 });
 
-function send_to_everyone(ws, mess){
-    users.forEach(user => {  //weź każdego usera po kolei
-        if (user !== ws && user.readyState === WebSocket.OPEN) //jeśli nie jest wysyłającym, ale jest podłączony do serwera
+function send_to_everyone(ws, mess) {
+    users.forEach(user => {
+        if (user !== ws && user.readyState === WebSocket.OPEN) {
             user.send(mess);
+        }
     });
 }
 
+// Obsługa nowego połączenia WebSocket
 server.on('connection', (ws, req) => {
     console.log('Client connected serwer');
-    //weszło -> nowa osoba się zalogowała
-    users.push(ws); //ws posiada info o danym userze, kto to i co to: WS TO TO KONTO, Z TEGO KONKRETNEGO KOMPUTERA cały czas
 
-    ws.on('message', (message) => {   //info o userze, dostep do tego kompuera przez 'ws' i otrzymujemy wiadomość, dostajemy dane do niej w nawiasie
-        //tutaj wchodzi WSZYSTKO, co przyjdzie od userów
-        try{
+    // Odczyt ciasteczek przy połączeniu
+    const cookies = parseCookies(req);
+
+    if (cookies.snake2) {
+        const userData = JSON.parse(cookies.snake2);
+        console.log('Dane z ciasteczka:', userData);
+        ws.send(`Witaj ${userData.name}, ID: ${userData.id}, Kolor: ${userData.hex}, Nr: ${userData.nr}`);
+    } else {
+        ws.send('Brak ciasteczka snake2');
+    }
+
+    users.push(ws); // Dodajemy użytkownika do tablicy podłączonych
+
+    // Odbieranie wiadomości od użytkownika
+    ws.on('message', (message) => {
+        try {
             console.log("Zaktualizowałem się wreszcie");
             var dane = JSON.parse(message);
             console.log("unjsoning done serwer");
-            console.log("type: "+dane.type);
+            console.log("type: " + dane.type);
 
-            switch(dane.type){
-                case 'mess_sent': 
+            switch (dane.type) {
+
+                                case 'mess_sent': 
                     console.log('sending...');
                     let sql = "insert into mess (id,nadawca,odbiorca,tresc) values (NULL,"+dane.id1+","+dane.id2+",'"+dane.tresc+"')";
                     db.query(sql, (err,res) => { if(err) console.log('error sql in mess: '+err); });
@@ -621,28 +622,21 @@ server.on('connection', (ws, req) => {
                 var to_send = JSON.stringify({type: dane.type, name: dane.name, tresc: dane.tresc});
                 send_to_everyone(ws, to_send);
                 break;
-
-
-    
-    
-                default: 
-                    console.log('another type in switch, UFOOOO: '+dane.tresc);
+                
+                default:
+                    console.log('another type in switch, UFOOOO: ' + dane.tresc);
             }
 
-        } catch {console.log("error caught serwer");}
-
-        
-
+        } catch {
+            console.log("error caught serwer");
+        }
     });
 
-    //wychodzi? Osoba się wylogowała
+    // Obsługa rozłączenia użytkownika
     ws.on('close', () => {
         console.log('Client disconnected serwer');
+        users = users.filter(user => user !== ws); // Usuwanie użytkownika z listy
     });
 });
-
-/*serH.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
-});*/
 
 console.log('WebSocket server is running on wss/tallalalalala');
