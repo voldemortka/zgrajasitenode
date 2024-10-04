@@ -96,12 +96,12 @@ server.on('connection', (ws, req) => {
     // Odczyt ciasteczek przy połączeniu
     const cookies = parseCookies(req);
 
-    if (cookies.snake2) {
-        const userData = JSON.parse(cookies.snake2);
+    if (cookies.snake1) {
+        const userData = JSON.parse(cookies.snake1);
         console.log('Dane z ciasteczka:', userData);
-        ws.send(`Witaj ${userData.name}, ID: ${userData.id}, Kolor: ${userData.hex}, Nr: ${userData.nr}`);
+        console.log(`Witaj ${userData.name}, ID: ${userData.id}, Kolor: ${userData.hex}, Nr: ${userData.nr}`);
     } else {
-        ws.send('Brak ciasteczka snake2');
+        console.log('Brak ciasteczka snake2');
     }
 
     users.push(ws); // Dodajemy użytkownika do tablicy podłączonych
