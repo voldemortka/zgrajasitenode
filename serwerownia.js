@@ -21,6 +21,9 @@ function parseCookies(request) {
 
 // Tworzenie serwera HTTP do obsługi plików
 const serH = http.createServer((req, res) => {
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Origin', 'https://zgrajasite.onrender.com');
+    
     const urlParts = req.url.split('/').filter(part => part);
     const gameFolder = urlParts[0] || 'default'; // Domyślny katalog, jeśli nie podano
     const filePath = path.join(__dirname, gameFolder, urlParts.slice(1).join('/') || 'index.html');
