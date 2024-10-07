@@ -15,6 +15,7 @@ socket.addEventListener('message', (event) => {
 
             switch(dane.type){
               case 'zalogowano':
+                    window.location.href="selection.html";
                 break;
             }
         }
