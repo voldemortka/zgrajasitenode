@@ -119,6 +119,42 @@ server.on('connection', (ws, req) => {
 
             switch (dane.type) {
 
+                    //LOGOWANE DO STRONY
+
+                case 'log_in_check':
+                    //name, pass
+                    const verifyUserPassword = async (plainPassword, hashedPassword) => {
+                      try {
+                        const isMatch = await bcrypt.compare(plainPassword, hashedPassword);
+                        if (isMatch) {
+                          console.log('Hasło jest poprawne');
+                            //OK, logujemy
+                            ws.send(type: 'zalogowano');
+                        } else {
+                          console.log('Błędne hasło');
+                            ws.send(JSON.stringify({type: 'password_error'}));
+                        }
+                      } catch (err) {
+                        console.error(err);
+                      }
+                    };
+
+                    //hasło z bazy
+                    var sqlx = "select pass from konto where name=".dane.name;
+                    db.query(sqlx, (err,respikapika) => { if(err) console.log('error sql in main: '+err); 
+                        else  
+                        {
+                            if(respikapika.length!=0) ws.send(type: 'error_log');
+                            else{
+                                var frombaza = respikapika[0].name;
+                                verifyUserPassword(dane.pass, frombaza);
+                            }
+                            
+                        }
+                    });
+                       
+                    break;
+
                                 case 'mess_sent': 
                     console.log('sending...');
                     let sql = "insert into mess (id,nadawca,odbiorca,tresc) values (NULL,"+dane.id1+","+dane.id2+",'"+dane.tresc+"')";
