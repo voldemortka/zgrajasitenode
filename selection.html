@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <meta hettp-equiva="X-UA-Compatible" content="IE-edge.chrome=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">        
+        <link rel="website icon" href="zenszen.jpg" type="png"/>
+        <title>Zgrajasite - multikomputer</title>
+    </head>
+    <body>
+        <div class='panel_gorny'>
+            <div class='pan_top'><a href='zgraja.php' class='gora_a'>przeloguj</a></div>
+            <div class='pan_top' style='border-bottom: 1px solid white;'><a href='https//zgrajasite.onrender.com' class='gora_a' id='przekierowanie_str2' onmouseenter='info_przekier()' onmouseleave='info_out()'>Zwykła zgrajasite</a></div>
+        </div>
+
+
+        <div class='choosing_game_out'><a href='<?= $log ? "/wonsz3" : "" ?>' style='width: 600px;'><div class='choosing_game'>Wonsz 3.0</div></a></div>
+        <div class='choosing_game_out'><a href='<?= $log ? "/Pacman2" : "" ?>' style='width: 600px;'><div class='choosing_game'>Pacman 2.0</div></a></div>
+        <div class='choosing_game_out'><a href='<?= $log ? "" : "" ?>' style='width: 600px;'><div class='choosing_game'>Kropki</div></a></div>
+    </body>
+</html>
