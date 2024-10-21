@@ -129,7 +129,13 @@ server.on('connection', (ws, req) => {
                         if (isMatch) {
                           console.log('Hasło jest poprawne');
                             //OK, logujemy
-                            ws.send(type: 'zalogowano');
+                            sessionStorage.setItem('name', dane.name);
+                            let sql1234 = "select id from konto where name=".dane.name;
+                            db.query(sql, (err,res1234) => { if(err) console.log('error sql in mess: '+err); 
+                                sessionStorage.setItem('id', res1234.id);
+                                ws.send(type: 'zalogowano');
+                            });
+                            
                         } else {
                           console.log('Błędne hasło');
                             ws.send(JSON.stringify({type: 'password_error'}));
