@@ -1,0 +1,87 @@
+body{
+    background-color: #8c4862;
+    color: white;
+    cursor: default;
+}
+
+a:link{text-decoration: none; color: white;}
+a:visited{text-decoration: none; color: white;}
+
+h5{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 4px;
+}
+
+p{
+    margin-left: 40%;
+    font-size: 20px;
+}
+
+.little{
+    font-size: 14px;
+    color: #c0c0c0;
+}
+
+form{
+    margin-top: 8px;
+}
+
+.submits{
+    width:fit-content;
+    padding: 5px 10px 5px 10px;
+    border: 1px dashed white;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+.submits:hover{
+    background-color: #fff;
+    color: #8c4862;
+}
+
+#set_nick{
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px double white;
+    padding-bottom: 20px;
+}
+
+.choose_games{
+    width: 40%;
+    padding: 10px;
+    font-size: 24px;
+    border: 1px dashed white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.choose_games:hover{
+    transform: scale(0.95);
+}
+
+.rules{
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+#your_name{
+    font-size: 27px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+}
+
+#edit_name:hover{
+    cursor: pointer;
+    color: #000;
+}
+

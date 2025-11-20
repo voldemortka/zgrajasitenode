@@ -1,0 +1,467 @@
+body{
+    background-color: #8c4862;
+    cursor: default;
+    color: white;
+}
+h1{
+    margin-top: 8%;
+    font-size: 45px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+h2{
+    margin-top: 5%;
+    font-size: 50px;
+    margin-left: 8%;
+    letter-spacing: 2px;
+    margin-bottom: 4%;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h3{
+    font-size: 60px;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 7%;
+}
+
+h5{
+    font-size: 45px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 7px;
+}
+
+
+/* INDEX */
+
+#poczekalnia{
+    display: flex;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: 7vh;
+}
+
+.wait_nie{
+    flex-grow: 1;
+    width: 5%;
+    height: 15vh;
+    border: 1px dashed white;
+    font-size: 3vh;
+    text-align: center;
+}
+.wait_tak{
+    flex-grow: 1;
+    width: 5%;
+    height: 15vh;
+    border: 1px solid white;
+    font-size: 3vh;
+    text-align: center;
+    background-color: #752e49f1;
+}
+
+#start_game{
+    border: 1px dashed white;
+    text-align: 4vh;
+    width: 10%;
+    margin-left: 5%;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    float: left;
+}
+#start_game:hover{
+    transform: scale(0.95);
+}
+
+#leave_lobby{
+    float: left;
+    border: 1px dashed white;
+    text-align: 4vh;
+    width: 10%;
+    margin-left: 2%;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+#leave_lobby:hover{
+    transform: scale(0.95);
+}
+
+/* KROPY CENTRAL */
+
+#boczny{
+    float: left;
+    width: 15%;
+    align-items: center;
+    text-align: center;
+    margin-left: 3%;
+    margin-top: 4vh;
+}
+.boczne{
+    width: 95%;
+    margin-bottom: 2vh;
+    border: 1px dashed white;
+    font-size: 3vh;
+}
+.boczne:hover{
+    transform: scale(0.95);
+}
+
+#tura{
+    border: 1px dashed white;
+    margin-top: 3vh;
+    font-size: 3.5vh;
+}
+
+#finish_game:hover{
+    background-color: red;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#spis_ludnosci{
+    background-color: #752e49f1;
+    margin-top: 4vh;
+    border: 2px inset black;
+    width: 100%;
+    padding: 2px;
+}
+.spis_dets{
+    margin-left: auto;
+    margin-right: auto;
+    width: 87%;
+    font-size: 2vh;
+    padding-left: 3%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.spis_col{
+    height: 2vh;
+    width: 30%;
+    border: 0.5px dashed white;
+    margin-right: 3%;
+    margin-left: auto;
+}
+
+
+#plansza{
+    float: left;
+    width: 75%;
+    height: 90vh;
+    margin-top: 3vh;
+    background-color: white;
+    margin-left: 5%;
+    text-align: center;
+    align-items: center;
+}
+
+.kreski1{    /*-*/
+    background-color: #add8e6;
+    border: 1px solid white;
+    display: inline-block;
+    width: 0.9%;
+    height: 0.6vh;
+    margin: 0px;
+}
+.kreski1:hover{
+    border: 1px solid black;
+}
+.kreski2{  /*|*/
+    background-color: #add8e6;
+    border: 1px solid white;
+    display: inline-block;
+    width: 0.3%;
+    margin-left: 0.3%;
+    margin-right: 0.3%;
+    height: 2vh;
+}
+.kreski2:hover{
+    border: 1px solid black;
+}
+.kreski3{  /*<-*/
+    background-color: white;
+    border: 1px solid white;
+    display: inline-block;
+    /*width: 1%;
+    height: 0.6vh;*/
+    position: absolute;
+}
+.kreski3:hover{
+    border: 1px solid black;
+}
+.kreski4{   /*->*/
+    background-color: white;
+    border: 1px solid white;
+    display: inline-block;
+    /*width: 1%;
+    height: 0.6vh;*/
+    position: absolute;
+}
+.kreski4:hover{
+    border: 1px solid black;
+}
+.kreski_none{  
+    background-color: white;
+    border: 1px solid blue;
+    display: inline-block;
+    width: 0.5%;
+    height: 0.6vh;
+}
+.daszek_box{
+    display: inline-block;
+    width: 2%;
+    height: 0.6vh;
+    position: relative;
+    border: 1px solid white;
+}
+
+
+
+
+.kropki_nie{
+    display: inline-block;
+    border-radius: 100%;
+    border: 1px solid pink;
+    width: 0.8%;
+    height: 1vh;
+    margin-left: 0.1%;
+    margin-right: 0.1%;
+    background-color: #ffffff;
+}
+.kropki_nie:hover{
+    border: 1px solid black;
+}
+
+
+
+
+
+/* plansza */
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(27, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    width: 75%;
+    height: 90vh;
+    background-color: white;
+}
+
+.cell {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+}
+
+.line-horizontal1, .line-horizontal2, .line-vertical1, .line-vertical2 {
+    position: absolute;
+    background-color: #add8e6;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+.diagonal-1A, .diagonal-2A, .diagonal-1B, .diagonal-2B{
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+.line-horizontal1 {
+    width: 50%;
+    height: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+.line-horizontal2 {
+    width: 50%;
+    height: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    left: auto;
+}
+
+.line-vertical1 {
+    height: 50%;
+    width: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+.line-vertical2 {
+    height: 50%;
+    width: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    top: auto;
+}
+
+.diagonal-1A, .diagonal-2A, .diagonal-1B, .diagonal-2B {
+    width: 40%;
+    height: 10%;
+    /*transform-origin: center;*/
+}
+
+.diagonal-1A {  /* \ */
+    transform: rotate(45deg);
+    top: 20%;
+    left:10%;
+}
+.diagonal-1B {
+    transform: rotate(45deg);
+    bottom: 20%;
+    right: 10%;
+    top: auto;
+    left: auto;
+}
+
+.diagonal-2A {
+    transform: rotate(-45deg);
+    top: 20%;
+    right: 10%;
+    left: auto;
+}
+.diagonal-2B {
+    transform: rotate(-45deg);
+    left: 10%;
+    bottom: 20%;
+    top: auto;
+}
+
+.dot {
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    z-index: 10;
+    opacity: 0%;
+}
+
+/* Hover effects */
+.line-horizontal1:hover, .line-horizontal2:hover, .line-vertical1:hover, .line-vertical2:hover, .diagonal-1A:hover, .diagonal-2A:hover, .diagonal-1B:hover, .diagonal-2B:hover, .dot:hover {
+    border-color: black;
+}
+
+.dot:hover{
+    opacity: 100%;
+}
+
+/* MESS */
+
+.mess_box{
+    width: 80%;
+    border: 3px groove white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+    margin-top: 5vh;
+    height: 85vh;
+}
+.dopisek{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: gray;
+}
+.last_mess{
+    border: 1px dashed white;
+    text-align: justify;
+    width: 35%;
+    padding: 5px;
+    margin-left: 10%;
+    margin-bottom: 10px;
+}
+.last_name{
+    margin-left: 10%;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.last_tekst{
+    margin-left: 5%;
+    font-size: 20px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#mess_typing{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+.type_mess{
+    float: left;
+    width: 70%;
+    margin-left: 10%;
+}
+.send_mess{
+    float: left;
+    cursor: pointer;
+}
+
+#agree{
+    font-size: 12px;
+    letter-spacing: 3px;
+    width: fit-content;
+    padding: 5px 10px 5px 10px;
+    border: 1px dashed white;
+    text-align: center;
+    margin-left: 10%;
+    border-radius: 20px;
+}
+#agree:hover{
+    transform:scale(0.95);
+}
+
+#back_home{
+    font-size: 12px;
+    letter-spacing: 3px;
+    width: fit-content;
+    padding: 5px 10px 5px 10px;
+    border: 1px dashed white;
+    text-align: center;
+    margin-left: 10%;
+    border-radius: 20px;
+}
+#back_home:hover{
+    background-color: #fff;
+    color:#8c4862;
+}
+
+a:link{
+    text-decoration: none;
+    color: white;
+}
+a:visited{
+    text-decoration: none;
+    color: white;
+}

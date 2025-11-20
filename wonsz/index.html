@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <meta hettp-equiva="X-UA-Compatible" content="IE-edge.chrome=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+        <link rel="website icon" href="" type="png"/>
+        <title>Wonsz 3.0 -> zbieramy graczy</title>
+
+        <script src="../jquery-3.7.1.min.js"></script>
+        <script src="wonsz_index.js"></script>
+    </head>
+    <body onload='loaded()'>
+
+        <h4>Dostępne kolory węża: (wybierz sobie jakiś)</h4>
+        <div id='kolory'></div>
+
+        <div id='start_game' onclick='start_game()'>Start game</div>
+        <div id='leave_lobby' onclick='leave_lobby()'>Leave lobby</div>
+        <div style='clear: both;'></div>
+
+        <div id='poczekalnia'></div>
+
+        <div class='mess_box'>
+            <h5>Messages</h5>
+            <div id='messages_list'>
+            </div>
+        </div>
+        <div id='mess_typing'>
+            <form method='post' action='index.php' id='message_form'>
+                <input class='type_mess' type='text' placeholder='type a message' name='new_mess' id='new_mess'>
+                <div class='send_mess'><input style='cursor: pointer;' type='submit' value='send'></div>
+            </form>
+                </br>
+        </div>
+    </body>
+</html>

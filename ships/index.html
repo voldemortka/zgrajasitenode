@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='pl'>
+    <head>
+        <meta charset='utf-8'/>
+        <link rel='stylesheet' href='style.css' type='text/css'/>
+        <link rel='stylesheet' href='../style.css' type='text/css'/>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta hettp-equiva='X-UA-Compatible' content='IE-edge.chrome=1' />
+        <link rel='website icon' href='' type='png'/>
+        <title>Ships main page</title>
+
+        <script src="../jquery-3.7.1.min.js"></script>
+        <script src="ships.js"></script>
+
+
+        <style>
+            #nameset{
+                width: 50vw;
+                margin: 7vh auto 13vh auto; 
+                padding: 1vh 1vw;
+                font-size: 1.2em;
+                border: 1px solid var(--text);
+            }
+            #name_ex{
+                font-size: 2em;
+                letter-spacing: 3px;
+                text-align: center;
+                padding: 0.3vh 0;
+                margin: 1vh 0 2vh 0;
+            }
+
+            .butt1{
+                margin-bottom: 3vh;
+            }
+        </style>
+    </head>
+    <body onload="inizial_index()">
+        <main>
+            <header class="main_top">
+                <a href="../index.html" style="width: fit-content;"><img src="../pierog.png" alt="Here there was supose to be The Pieróg..." class="top_pier"></a>
+            </header>
+
+            <div id="show_nick"></div>
+            
+          <!--  <button class="butt1" onclick="create_game()">Create a new game</button>  -->
+            <a href='create_game.html' class="butt1">Create a new game</a>
+            <a href='tips.html' class="butt1">check how to play</a>
+            <a href='../join_game.html' class="butt1">join an existing game</a>
+        </main>
+    </body>
+</html>

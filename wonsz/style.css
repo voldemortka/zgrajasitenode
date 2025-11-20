@@ -1,0 +1,405 @@
+body{
+    background-color: #041037;
+    color: white;
+    cursor: default;
+}
+
+h1{
+    font-size: 50px;
+    text-align: center;
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 6px;
+}
+h3{
+    font-size: 30px;
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 4px;
+    text-align: center;
+}
+h4{
+    font-size: 35px;
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 4px;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 0px;
+}
+h5{
+    font-size: 45px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 7px;
+}
+
+a:link{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:visited{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* NICKNAME */
+#setting_name{
+    width: 60%;
+    height: 40vh;
+    padding-top: 18vh;
+    border: 10px groove white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8vh;
+    text-align: center;
+    font-size: 26px;
+}
+/* ZASADY */
+ul{
+    margin-left: 5%;
+    margin-top: 5vh;
+    font-size: 3vh;
+    padding-right: 3%;
+    letter-spacing: 1px;
+}
+
+#gotostart{
+    width: 150px;
+    font-size: 20px;
+    border: 1px solid white;
+    text-align: center;
+    margin-left: 3%;
+    margin-top: 7vh;
+}
+#gotostart:hover{
+    cursor: pointer;
+    border: 3px solid white;
+    transform: scale(0.9);
+}
+
+
+/* INDEX */
+#kolory{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px groove white;
+    height: 18vh;
+    margin-top: 15px;
+    justify-content: space-around;
+    background-color: #041124;
+    display: flex; /*W jednej linii*/
+}
+
+.kolor_box{
+    width: 8%;
+    align-items: center;
+    margin-left: 1%;
+    height: 85%;
+    margin-top: 1%;
+    border: 1px double #041124;
+    flex-grow: 1; /*układ w środku, że równo*/
+    /* display: inline-block; */
+}
+.kolor_box:hover{
+    cursor: pointer;
+    border: 1px double white;
+}
+
+.kolor_id{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+.kolor_hex{
+    width: 90%;
+    border: 0.5px dashed white;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%;
+}
+
+
+#start_game{
+    border: 2px groove white;
+    text-align: center;
+    font-size: 20px;
+    width: 180px;
+    margin-left: 10%;
+    float: left;
+    margin-top: 5vh;
+    background-color: #041124;
+}
+#start_game:hover{
+    cursor: pointer;
+    border: 2px double white;
+    background-color: white;
+    color: black;
+}
+
+#leave_lobby{
+    border: 2px groove white;
+    text-align: center;
+    font-size: 20px;
+    width: 180px;
+    margin-left: 2%;
+    float: left;
+    margin-top: 5vh;
+    background-color: #041124;
+}
+#leave_lobby:hover{
+    cursor: pointer;
+    border: 2px double white;
+    background-color: white;
+    color: black;
+}
+
+
+#poczekalnia{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px groove white;
+    margin-top: 4vh;
+    height: 52vh;
+}
+
+.pocz_nie{
+    display: inline-block;
+    width: 18%;
+    margin-left: 1%;
+    margin-top: 4vh;
+    height: 19vh;
+    border: 1px dotted white;
+    font-size: 3vh;
+    text-align: center;
+    padding-top: 1vh;
+    letter-spacing: 1px;
+}
+.pocz_tak{
+    display: inline-block;
+    width: 18%;
+    margin-left: 1%;
+    margin-top: 4vh;
+    height: 19vh;
+    border: 1px solid white;
+    font-size: 3vh;
+    text-align: center;
+    padding-top: 1vh;
+    background-color: #041124;
+    letter-spacing: 2px;
+}
+
+
+.mess_box{
+    width: 80%;
+    border: 3px groove white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+    margin-top: 5vh;
+    height: 85vh;
+}
+.dopisek{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: gray;
+}
+.last_mess{
+    border: 1px dashed white;
+    text-align: justify;
+    width: 35%;
+    padding: 5px;
+    margin-left: 10%;
+    margin-bottom: 10px;
+}
+.last_name{
+    margin-left: 10%;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.last_tekst{
+    margin-left: 5%;
+    font-size: 20px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#mess_typing{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+.type_mess{
+    float: left;
+    width: 70%;
+    margin-left: 10%;
+}
+.send_mess{
+    float: left;
+    cursor: pointer;
+}
+
+
+
+/* WONSZ */
+#panel_boczny{
+    float: left;
+    width: 5%;
+    padding-top: 5vh;
+    height: 80vh;
+    text-align: center;
+    align-items: center;
+    font-size: 2vh;
+}
+
+#finish_game{
+    border: 1px solid #ff6060;
+    background-color: #680606;
+    margin-bottom: 10vh;
+}
+#finish_game:hover{
+    cursor: pointer;
+    background-color: #ff0000;
+    background-color: #fbff00;
+    color: black;
+    transform: scale(0.9);
+}
+
+#start_snake{
+    border: 1px solid white;
+}
+#start_snake:hover{
+    transform: scale(0.9);
+}
+
+#leave_game{
+    border: 1px solid white;
+    margin-bottom: 5vh;
+}
+#leave_game:hover{
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+#licznik{
+    font-size: 3vh;
+}
+
+#plansza{
+    float: left;
+    width: 94%;
+    height: 99vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center;
+    font-size: 10px;
+}
+.pole{
+    width: 2%;
+    height: 3vh;
+    border: 0.5px dotted white;
+    display: inline-block;
+    background-color: #041037;
+    align-items: center;
+    text-align: center;
+
+    background-size: cover; /* Dopasowanie rozmiaru tła */
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.eye{
+    width: 20%;
+    height: 1vh;
+    border-radius: 100%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 0.3vh;
+}
+.ryj{
+    width: 35%;
+    height: 0.2vh;
+    margin-top: 0.7vh;
+}
+
+
+
+/* PODSUMOWANIE GRY */
+
+#podsumowanie{
+    width: 80%;
+    border: 5px groove white;
+    margin-left: auto;
+    margin-right: auto;
+    height: 45vh;
+    margin-top: 80px;
+}
+
+.pods{
+    text-align: center;
+    font-size: 3vh;
+    letter-spacing: 2px;
+}
+
+#again{
+    margin-left: 5%;
+    width: 150px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid white;
+    float: left;
+}
+#again:hover{
+    transform: scale(0.95);
+    border: 2px solid white;
+}
+
+#end_definitely{
+    float: left;
+    margin-left: 4%;
+    width: 250px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid white;
+}
+.end_def1:hover{
+    transform: scale(0.95);
+    border: 2px solid white;
+}
+.end_def2:hover{
+    cursor: default;
+}
+
+
+#back_home{
+    width: 150px;
+    font-size: 17px;
+    border: 1px solid white;
+    text-align: center;
+    margin-left: 3%;
+    margin-top: 7vh;
+    letter-spacing: 1px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+}
+#back_home:hover{
+    font-size: 12px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}

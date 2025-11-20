@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='pl'>
+    <head>
+        <meta charset='utf-8'/>
+        <link rel='stylesheet' href='style.css' type='text/css'/>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta hettp-equiva='X-UA-Compatible' content='IE-edge.chrome=1' />
+        <link rel='website icon' href='' type='png'/>
+        <title>Battleships</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Underdog&display=swap" rel="stylesheet">
+
+        
+        <script src="../jquery-3.7.1.min.js"></script>
+        <script src="game.js"></script>
+
+
+        <style>
+        </style>
+    </head>
+    <body onload="inizial()">
+        <main class="mouse">
+
+            <div id="finish_game" onclick="end_game()">Definitely end the game</div>
+            <div id="who_now"></div>
+            <section id="mine_board"></section>
+            <section id="second_board">
+                <p style="font-size: 20px;">In order to place your ship or take it from a particular square - just hit the square</p>
+                <button id="conf_ships" onclick="confirm_conf()" type="button">Confirm configuration </button>
+                <p><span class="important">After</span> hitting the button above, you <span class="important">can't change anything</span> with your ships, so if you make any mistake - the other player's gonna <span class="important">eat you</span></p>
+                <h2 class="underdog">Aviliable ships:</h2>
+                <p>Count them yourself. The website won't check if you cheat</p>
+                <ol>
+                    <li>1-square ship (1)</li>
+                    <li>1-square ship (2)</li>
+                    <li>1-square ship (3)</li>
+                    <li>1-square ship (4)</li>
+                    <li>2-square ship (1)</li>
+                    <li>2-square ship (2)</li>
+                    <li>2-square ship (3)</li>
+                    <li>3-square ship (1)</li>
+                    <li>3-square ship (2)</li>
+                    <li>4-square ship (1)</li>
+                </ol>
+                <h2 class="underdog">Some important shit</h2>
+                <ul>
+                    <li>Ships can't touch themselves (ships are too young for kissing...)</li>
+                    <li>Ships' corners can't touch each other either</li>
+                    <li>Ships don't have to be straight (*rainbow flag*) - you can fold them however you want</li>
+                    <li>You can't forget abut any of these ships</li>
+                    <li>You can't add any ship</li>
+                    <li>you can't change the amount of squares of the ships</li>
+                    <li>Just the 'aviliable ships' list above can't be changed in any way</li>
+                    <li>Breaking any of these rules might cause being eaten alive by the other player</li>
+                </ul>
+            </section>
+
+        </main>
+    </body>
+</html>

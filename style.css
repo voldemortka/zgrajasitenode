@@ -1,0 +1,86 @@
+:root{
+    --bg : #120019;
+    --text: #E0B3FF;
+    --second: #9400D3;
+    --size: 16px;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--text);
+    cursor: default;
+}
+
+a:link{
+    text-decoration: none;
+    color: var(--second);
+}
+
+a:visited{
+    text-decoration: none;
+    color: var(--second);
+}
+
+a:hover{
+    text-decoration: underline;
+    color: var(--second);
+    cursor: pointer;
+}
+
+.butt{
+    text-decoration: none;
+    display: block;
+    color: var(--text);
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid var(--text);
+}
+
+.butt:hover{
+    color: var(--second);
+    border: 1px solid var(--second);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.butt:active{
+    border: 1px solid var(--second);
+}
+
+
+
+.top_pier{
+    width: 15vw;
+}
+
+
+
+
+
+.underdog {
+  font-family: "Underdog", system-ui;
+  font-weight: 400;
+  font-style: normal;
+} /* random sqeare */
+
+.nosifer {
+  font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} /* big blood dipping */
+
+.shadows {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+} /* hand-writing */
+
+.rubik {
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+} /* wet paint */

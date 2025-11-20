@@ -1,0 +1,133 @@
+:root{
+    --bg: #120019;
+    --text: #E0B3FF;
+    --main: #9400D3;
+
+    --color_ship: #51560fff;
+    --color_drown: #6d0000ff;
+    --color_miss: #015f71ff;
+    --color_total_drown: #ff0000;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--text);
+    cursor: default;
+}
+
+.underdog {
+  font-family: "Underdog", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--main);
+  font-size: 20px;
+} /*ozdobna*/
+
+.mouse {
+    letter-spacing: 0.5px;
+  font-family: "Mouse Memoirs", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} /*normal*/
+
+
+
+a{
+    color: var(--text);
+    text-decoration: none;
+    cursor: default;
+
+}
+
+.butt2{
+    width: fit-content;
+    padding: 2px 5px;
+    border: 1px solid var(--text);
+    letter-spacing: 0.5px;
+    display: block;
+}
+.butt2:hover{
+    color: var(--main);
+    border: 1px solid var(--main);
+}
+
+.butt1{
+    display: block;
+    text-align: center;
+    width: 50vw;
+    padding: 5px 0;
+    letter-spacing: 1.5px;
+    margin: 1vh auto;
+    border: 1px solid var(--text);
+    font-size: 1.25em;
+}
+.butt1:hover{
+    color: var(--main);
+    border: 1px solid var(--main);
+}
+
+
+
+#mine_board{
+    width: 40vw;
+    height: 40vw;
+    position: relative;
+    float: left;
+    margin: 2vh 3vw;
+}
+
+#second_board{
+    float: left;
+    width: 50vw;
+}
+
+.sq{
+    width: 8%;
+    height: 8%;
+    display: inline-block;
+    border: 1px solid #ffffffd7;
+    background-color: var(--bg);
+    vertical-align: middle;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#finish_game{
+    width: fit-content;
+    letter-spacing: 1px;
+    padding: 2px 5px;
+    border: 2px solid var(--main);
+    border-radius: 20px;
+    color: var(--main);
+    margin: 2vh auto 5vh 2vw;
+    font-size: 19px;
+}
+#finish_game:hover{
+    color: var(--text);
+    border: 2px solid var(--text);
+    cursor: pointer;
+}
+
+
+#conf_ships{
+    width: fit-content;
+    letter-spacing: 0.5px;
+    padding: 3px 7px;
+    border: 1px solid var(--text);
+    border-radius: 20px;
+    color: var(--text);
+    margin: 2vh auto 5vh 2vw;
+    background-color: var(--bg);
+    margin: 1vh 0;
+}
+#conf_ships:hover{
+    border: 1px solid var(--main);
+    color: var(--main);
+    cursor: pointer;
+}
+
+.important{
+    text-decoration: underline;
+    font-weight: bold;
+}

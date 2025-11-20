@@ -1,0 +1,60 @@
+body{
+    background-color: #05053c;
+    color: #fff;
+    cursor: default;
+}
+
+a:link{text-decoration: none; color: white;}
+a:visited{text-decoration: none; color: white;}
+
+/* INDEX */
+
+#start{
+    width:fit-content;
+    padding: 5px 10px 5px 10px;
+    border: 5px double white;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-left: 4%;
+    float: left;
+}
+#start:hover{
+    transform: scale(0.95);
+}
+
+#licznik{
+    float: left;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-left: 6%;
+}
+
+#left{
+    width: 15%;
+    margin-left: 1%;
+    margin-top: 6vh;
+    border: 3px solid white;
+    float: left;
+    padding-bottom: 1vh;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#center_place{
+    float: left;
+}
+
+.gracz_box{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    border: 1px solid white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+    height: 8vh;
+    display: grid;
+    place-items: center;
+}

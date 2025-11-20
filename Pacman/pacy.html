@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <meta hettp-equiva="X-UA-Compatible" content="IE-edge.chrome=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+        <link rel="website icon" href="Down.jpg" type="png"/>
+        <title>Pacman 2.0</title>
+    </head>
+    <body style='display: flex;'>
+        <div id='panel'>
+            <div id='finish' onclick="end_game()">Zakończ grę</div>
+            <div id='start_pacy' onclick='stala()'>Start</div>
+            <div class='pan' id='who_am_i'>Twoja postać: xxx</div>
+            <div class='pan' id='kto_na_obiad'>Aktualnie jedzeni: Pacmany</div>
+            <div class='pan' id='pkt'><div id='aktual_pkt' class='od_pkt'>0</div><div id='max_pkt' class='od_pkt'></div></div>
+            <div class='pan' id='if_dead'></div>
+        </div>
+        <div id='plansza'></div>
+
+        <script src="../jquery-3.7.1.min.js"></script>
+        <script src="pacy.js"></script>
+    </body>
+</html>

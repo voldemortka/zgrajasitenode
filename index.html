@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='pl'>
+    <head>
+        <meta charset='utf-8'/>
+        <link rel='stylesheet' href='style.css' type='text/css'/>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta hettp-equiva='X-UA-Compatible' content='IE-edge.chrome=1' />
+        <link rel='website icon' href='pierog_kwadrat.png' type='png'/>
+        <title>gry multikomputer | home</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Rubik+Wet+Paint&family=Shadows+Into+Light&family=Underdog&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap' rel='stylesheet'>  <!-- idk co to za czionka, nie użyta chyba??? -->
+
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="main.js"></script>
+
+        <style>
+            body{
+                background-image: url("background1.png");
+                background-repeat: no-repeat;
+                background-position: top center;
+                background-size: cover;
+            }
+
+            #nameset{
+                width: 40vw;
+                padding: 2vh 2vw;
+                border: 1px solid #fff;
+                margin: 6vh auto;
+                position: relative;
+            }
+
+            #show_nick{
+                font-size: 1.4rem;
+                letter-spacing: 1px;
+                margin-bottom: 2vh;
+                text-align: center;
+            }
+
+            #spider_nick{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 95%;
+            }
+
+            .game_list{
+                text-decoration: none;
+                display: block;
+                color: var(--text);
+                width: 65vw;
+                margin: 1vh auto;
+                padding: 5px 10px;
+                border: 1px solid var(--text);
+                text-align: center;
+                letter-spacing: 1px;
+                font-size: 1.2rem;
+                border-radius: 20px;
+            }
+
+            .game_list:hover{
+                color: var(--second);
+                border: 1px solid var(--second);
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .game_list:active{
+                border: 1px solid var(--second);
+            }
+
+            #umreon{
+                width: 15vw;
+                position: absolute;
+                top: 1vh;
+                left: 20vw;
+            }
+
+            h2{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body onload="inizial_index()">
+    <header class="main_top">
+        <a href="index.html" style="width: fit-content;"><img src="pierog.png" title="Go to the main screen" alt="Here there was supose to be The Pieróg..." class="top_pier"></a>
+        <a href="setname.html" style="width: fit-content;"><img id="umreon" src="Umreon.png" title="Change nickname" alt="It was supposed to be umreon"></a>
+    </header>
+
+        <div id="nameset" class="rubik">
+            <img src="spiderweb_corner_clear.png" id="spider_nick">
+            <div id="show_nick"></div>
+        </div>
+
+        <a href="join_game.html" id="join_game" class="game_list underdog">Join an existing game</a>
+
+        <h2 class="rubik">Create game or check how to play:</h2>
+        <a href="wonsz/index.html" class="game_list underdog">Wonsz</a>
+        <a href="ships/index.html" class="game_list underdog">Ships</a>
+        <a href="Kropki/index.html" class="game_list underdog">Kropki</a>
+        <a href="Pacman/index.html" class="game_list underdog">Pacman</a>
+        <a href="maze3D/index.html" class="game_list underdog">Pacman 3D</a>
+
+
+        
+    </body>
+</html>

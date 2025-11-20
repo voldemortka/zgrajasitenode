@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <meta hettp-equiva="X-UA-Compatible" content="IE-edge.chrome=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">        
+        <link rel="website icon" href="" type="png"/>
+        <title>Kropki</title>
+    </head>
+    <body onload='loaded_kropy()' style="display: flex;">
+        <div id="boczny">
+            <div class="boczne" id="finish_game" onclick="finish_game()">Zakończ grę</div>
+            <div class="boczne" id="leave_game" onclick="leave_game()">Opuść grę</div>
+            <div class="boczne" id="complete" onclick="complete()">Zakończ turę</div>
+            <div id="tura">Tura:<br>NIE twoja</div>
+
+            <div id="spis_ludnosci"></div>
+        </div>
+
+       <!-- <div id="plansza"></div> -->
+        <div id="board"></div>
+
+        <div style="clear:both;"></div>
+
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="kropy.js"></script>
+    </body>
+</html>

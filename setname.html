@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='pl'>
+    <head>
+        <meta charset='utf-8'/>
+        <link rel='stylesheet' href='style.css' type='text/css'/>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta hettp-equiva='X-UA-Compatible' content='IE-edge.chrome=1' />
+        <link rel='website icon' href='' type='png'/>
+        <title>Set your nickname</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Rubik+Wet+Paint&family=Shadows+Into+Light&family=Underdog&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap' rel='stylesheet'>  <!-- idk co to za czionka, nie użyta chyba??? -->
+        
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="main.js"></script>
+
+
+        <style>
+            form{
+                width: fit-content;
+                margin: 40vh auto auto auto;
+                padding: 5vh 5vw;
+                border-image: url(border_bats_4.png) 20 round;
+                border-width: 20px;
+                border-style: solid;
+                font-size: 1.4em;
+            }
+
+            body{
+                background-image: url(background_spiderweb.png);
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+            }
+
+            #return{
+                margin: 6vh auto auto 20vw;
+                display: block;
+                color: var(--text);
+            }
+            #return:hover{
+                text-decoration: none;
+                color: var(--second);
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+        <header class="main_top">
+            <a href="index.html" style="width: fit-content;"><img src="pierog.png" title="Go to the main screen" alt="Here there was supose to be The Pieróg..." class="top_pier"></a>
+        </header>
+
+        <form method='post'>
+                <label class="rubik">Your new nickname: <input type='text' name='name' id="nickname_new" placeholder='enter your name'></label>
+                <button type="button" id='confirm_nickname' onclick="set_nickname()">Save</button>
+            </form>
+
+        </main>
+    </body>
+</html>

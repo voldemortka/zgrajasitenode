@@ -1,0 +1,337 @@
+body{
+    background-color: black;
+    color: #ff0000ef;
+    height: 100vh; /* 100% wysokości okna przeglądarki */
+    box-sizing: border-box;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: default;
+}
+
+#infos{
+    border: 1px dashed #ff0000a6;
+    text-align: justify;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+#agree{
+    border: 1px dashed #ff0000a6;
+    width: 200px;
+    margin-left: 100px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+}
+#back_home{
+    border: 1px dashed #ff0000a6;
+    width: 200px;
+    margin-left: 50px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+}
+#back_home:hover{
+    font-size: 12px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+h1{
+    margin-top: 8%;
+    font-size: 45px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+h2{
+    margin-top: 5%;
+    font-size: 50px;
+    margin-left: 8%;
+    letter-spacing: 2px;
+    margin-bottom: 4%;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h3{
+    font-size: 60px;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 7%;
+}
+
+h5{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 5px;
+}
+
+.komunikat{
+    border: 3px inset #752e49f1;
+    background-color: #752e49f1;
+    border-radius: 10px;
+    width: 650px;
+    margin-left: 8%;
+    margin-bottom: 3%;
+    padding: 4px;
+    text-align: justify;
+    font-size: 20px;
+    position: relative;
+}
+
+form{
+    text-align: center;
+}
+
+a:link{
+    color: #ff0000a6;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #ff0000a6;
+    text-decoration: none;
+}
+
+
+#finish{
+    width: 80%;
+    border: 1px solid #ff0000a6;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#finish:hover{
+    border: 1px solid #ff0000;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+#plansza{
+    display: grid;
+    grid-template-columns: repeat(30, 1fr); /* 30 kolumn */
+    grid-template-rows: repeat(20, 1fr); /* 20 wierszy */
+    height: 80vh;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    aspect-ratio: 3 / 2; /* Utrzymanie proporcji 30x20 */
+    margin-top: 10px;
+}
+
+.kafelki{
+    border: 1px solid white;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+}
+
+.kafelki img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+#panel{
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 90vh;
+    width: 150px;
+    border: 1px solid white;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.pan{
+    margin-top: 20px;
+}
+
+#poczekalnia{
+    width: 70%;
+    height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.pocz_nie{
+    width: 30%;
+    height: 40%;
+    border: 1px dashed #ff0000a6;
+    background-color: black;
+    display: inline-block;
+    margin-bottom: 5%;
+    margin-right: 3%;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+.pocz_tak{
+    width: 30%;
+    height: 40%;
+    border: 1px solid #ff0000ef;
+    background-color: black;
+    display: inline-block;
+    margin-bottom: 5%;
+    margin-right: 3%;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+.names{
+    margin-top: 10%;
+    font-size: 25px;
+}
+
+#rozpocznij{
+    border: 1px dashed #ff0000a6;
+    padding: 5px;
+    font-size: 18px;
+    width: 130px;
+    margin-left: 8%;
+    float: left;
+}
+#rozpocznij:hover{
+    border: 1px dashed  #ff000062;
+    color: #ff000062;
+    cursor: pointer;
+}
+
+#opusc{
+    float: left;
+    border: 1px dashed #ff0000a6;
+    padding: 5px;
+    font-size: 18px;
+    width: 130px;
+    margin-left: 20px;
+}
+#opusc:hover{
+    border: 1px dashed  #ff000062;
+    color: #ff000062;
+    cursor: pointer;
+}
+
+
+.mess_box{
+    width: 80%;
+    border: 1px solid #ff0000a6;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+.dopisek{
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+.last_mess{
+    border: 1px dashed white;
+    text-align: justify;
+    width: 35%;
+    padding: 5px;
+    margin-left: 10%;
+    margin-bottom: 10px;
+}
+.last_name{
+    margin-left: 10%;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.last_tekst{
+    margin-left: 5%;
+    font-size: 20px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.type_mess{
+    float: left;
+    width: 70%;
+    margin-left: 10%;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+.send_mess{
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+#start_pacy{
+    border: 1px dashed #ff0000a6;
+    width: 80%;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#start_pacy:hover{
+    border: 1px dashed  #ff000062;
+    color: #ff000062;
+    cursor: pointer;
+}
+
+.od_pkt{
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+}
+
+.koniec_gry_info{
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+#back_from_pacy{
+    border: 2px solid white;
+    margin-top: 20px;
+}
+#back_from_pacy:hover{
+    transform: scale(0.95);
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <meta hettp-equiva="X-UA-Compatible" content="IE-edge.chrome=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+        <link rel="website icon" href="" type="png"/>
+        <title>Pacman 2.0 -> zbieramy graczy</title>
+    </head>
+    <body>
+        <h2>Oczekiwanie na graczy...</h2>
+        <div id='rozpocznij' onclick='start_game()'>Start the game</div>
+        <div id='opusc' onclick='leave_lobby()'>Leave the game</div> <div style="clear:both;"></div>
+        <div id='poczekalnia'></div>
+
+        <div class='mess_box'>
+            <h5>Messages</h5>
+            <div id='messages_list'></div>
+            <form method='post' action='index.php' id='message_form'>
+                <input class='type_mess' type='text' placeholder='type a message' name='new_mess' id='new_mess'>
+                <div class='send_mess'><input style='cursor: pointer;' type='submit' value='send'></div>
+            </form>
+        </div>
+
+        <script src="../jquery-3.7.1.min.js"></script>
+        <script src="pacy_index.js"></script>
+    </body>
+</html>

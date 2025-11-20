@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='pl'>
+    <head>
+        <meta charset='utf-8'/>
+        <link rel='stylesheet' href='style.css' type='text/css'/>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta hettp-equiva='X-UA-Compatible' content='IE-edge.chrome=1' />
+        <link rel='website icon' href='' type='png'/>
+        <title>Join game</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Rubik+Wet+Paint&family=Shadows+Into+Light&family=Underdog&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap' rel='stylesheet'>  <!-- idk co to za czionka, nie użyta chyba??? -->
+
+
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="main.js"></script>
+
+        <style>
+            form{
+                margin: 10vh auto 7vh auto;
+                width: fit-content;
+            }
+
+            #comments{
+                width: 50vw;
+                margin: 0 auto;
+
+            }
+
+            h2{
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body onload="inizial()">
+        <main class="underdog">
+            <header class="main_top">
+                <a href="index.html" style="width: fit-content;"><img src="pierog.png" title="Go to the main screen" alt="Here there was supose to be The Pieróg..." class="top_pier"></a>
+            </header>
+            
+            <form method="post">
+                <label class="rubik" style="margin-bottom: 2vh; font-size: 25px;"> Enter the code for a game you want to join: <br>
+                <input type="text" id="type_code" placeholder="Enter the code here" size="30"> </label>
+                <button onclick="enter_code()" type="button">Confirm</button>
+            </form>
+
+            <div id="comments">
+                <h2 class="rubik">How to get the code?</h2>
+                <ul>
+                    <li>Find a friend</li>
+                    <li>Make the friend play with you any of the aviliable games</li>
+                    <li>Tell the friend to click the "create game" button on the main screen of the chosen game</li>
+                    <li>Your code should appear on your friend's screen</li>
+                    <li>Type the code here above</li>
+                    <li>Hit the 'confirm' button here above</li>
+                    <li>You've got it!</li>
+                </ul>            
+            </div>
+
+            
+        </main>
+    </body>
+</html>
